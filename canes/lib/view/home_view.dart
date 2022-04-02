@@ -1,5 +1,10 @@
+import 'package:canes/view/profil_view.dart';
+import 'package:canes/view/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+
+import '../widget/BottomNavigation.dart';
+import 'detail_view.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -9,15 +14,22 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int currentIndex = 0;
+  List Screen = [
+    splash_screen(),
+    HomePage(),
+    DetailPage(),
+    ProfilePage(),
+  ];
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         body: SafeArea(
-          child: Container(
-            color: Colors.black,
-            child: Column(
-              children: [
+          child: SingleChildScrollView(
+            child: Container(
+              color: Colors.black,
+              child: Column(children: [
                 //Grafikler
                 Padding(
                   padding: const EdgeInsets.only(top: 10),
@@ -203,10 +215,12 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: EdgeInsets.only(left:50 ),
-                      child: Text("Şimdi",style:
-                                    TextStyle(color: Colors.white, fontSize: 14),),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 50),
+                      child: Text(
+                        "Şimdi",
+                        style: TextStyle(color: Colors.white, fontSize: 14),
+                      ),
                     )
                   ]),
                 ),
@@ -237,14 +251,17 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: EdgeInsets.only(left:50 ),
-                      child: Text("5 Saat",style:
-                                    TextStyle(color: Colors.white, fontSize: 14),),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 50),
+                      child: Text(
+                        "5 Saat",
+                        style: TextStyle(color: Colors.white, fontSize: 14),
+                      ),
                     )
                   ]),
                 ),
-              ],
+                
+              ]),
             ),
           ),
         ),

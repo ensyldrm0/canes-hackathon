@@ -1,4 +1,5 @@
 import 'package:canes/view/splash_view.dart';
+import 'package:canes/widget/BottomNavigation.dart';
 import 'package:flutter/material.dart';
 
 import 'view/home_view.dart';
@@ -12,7 +13,9 @@ class MyMain extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return HomePage();
+    return MaterialApp(
+      home:BottomNavigation(),
+    );
   }
 }
 /* MaterialApp(
