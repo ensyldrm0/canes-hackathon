@@ -10,20 +10,19 @@ class _splash_screenState extends State<splash_screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 1, 12, 21),
       body: SafeArea(
         child: Container(
-          padding: const EdgeInsets.only(left: 20, right: 20, top: 40),
+          padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
           color: Colors.black,
           child: Column(
             children: [
               //Fotoğraf
-              Container(
-                child: Image(
-                  image: AssetImage("assets/images/Group30.png"),
-                ),
-              ),
-              const SizedBox(
-                height: 40,
+            Container(
+              child: Image(image: AssetImage("assets/images/Logo.png")),
+            ),
+              SizedBox(
+                height: 90,
               ),
               //Yazı
               Padding(
@@ -32,21 +31,21 @@ class _splash_screenState extends State<splash_screen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "The Complete Wallet",
+                      "Crypto Dinar",
                       style: TextStyle(color: Colors.green, fontSize: 15),
                     ),
                     SizedBox(
                       height: 7,
                     ),
                     Text(
-                      "Manege Your",
-                      style: TextStyle(color: Colors.white, fontSize: 30),
+                      "Kripto",
+                      style: TextStyle(color: Colors.white, fontSize: 30,fontWeight: FontWeight.bold),
                     ),
                     SizedBox(
                       height: 7,
                     ),
                     Text(
-                      "Finances",
+                      "Piyasasındaki",
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 30,
@@ -56,17 +55,18 @@ class _splash_screenState extends State<splash_screen> {
                       height: 7,
                     ),
                     Text(
-                      "effectively.",
+                      "Gözünüz.",
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 30,
+                        fontWeight: FontWeight.bold
                       ),
                     ),
                   ],
                 ),
               ),
               const SizedBox(
-                height: 20,
+                height: 40,
               ),
               //Get Started
               Padding(
@@ -75,7 +75,7 @@ class _splash_screenState extends State<splash_screen> {
                   textDirection: TextDirection.rtl,
                   child: ElevatedButton.icon(
                       onPressed: () {
-                        Navigator.pushNamed(context, "/home");
+                        Navigator.pushNamed(context, "/Bottom");
                       },
                       icon: const Padding(
                         padding: EdgeInsets.only(left: 5),
@@ -85,13 +85,13 @@ class _splash_screenState extends State<splash_screen> {
                         ),
                       ),
                       label: const Text(
-                        "Start",
+                        "Giriş",
                         style: TextStyle(fontSize: 18),
                       ),
                       style: ElevatedButton.styleFrom(
                           elevation: 20,
                           primary: const Color(0xFF0A5D75),
-                          minimumSize: const Size(80, 50),
+                          minimumSize:  Size(140, 50),
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20)))),
                 ),

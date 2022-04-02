@@ -3,6 +3,7 @@ import 'package:canes/view/splash_view.dart';
 import 'package:flutter/material.dart';
 
 import '../view/detail_view.dart';
+import '../view/haberler_view.dart';
 import '../view/profil_view.dart';
 
 class BottomNavigation extends StatefulWidget {
@@ -15,8 +16,8 @@ class BottomNavigation extends StatefulWidget {
 class _BottomNavigationState extends State<BottomNavigation> {
   int currentIndex = 0;
   List Screen = [
-    splash_screen(),
     HomePage(),
+    Haberler(),
     DetailPage(),
     ProfilePage(),
   ];
@@ -42,14 +43,14 @@ class _BottomNavigationState extends State<BottomNavigation> {
             backgroundColor: Colors.grey.shade900),
         const BottomNavigationBarItem(
           icon: Icon(
-            Icons.notifications,
+            Icons.chrome_reader_mode,
             color: Colors.white,
           ),
           label: 'Haberler',
         ),
         const BottomNavigationBarItem(
           icon: Icon(
-            Icons.bookmark,
+            Icons.forum,
             color: Colors.white,
           ),
           label: 'Forum',

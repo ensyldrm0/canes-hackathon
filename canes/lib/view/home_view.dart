@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:canes/view/profil_view.dart';
 import 'package:canes/view/splash_view.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +26,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
+        backgroundColor: Color.fromARGB(255, 1, 12, 21),
         body: SafeArea(
           child: SingleChildScrollView(
             child: Container(
@@ -124,39 +128,92 @@ class _HomePageState extends State<HomePage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    CircleAvatar(
-                      radius: 30,
-                      child: const Icon(
-                        Icons.search,
-                        size: 35,
-                      ),
-                      backgroundColor: Colors.grey.shade900,
+                    Column(
+                      children: [
+                        CircleAvatar(
+                          radius: 30,
+                          child: const Icon(
+                            Icons.search,
+                            size: 35,
+                          ),
+                          backgroundColor: Colors.grey.shade900,
+                        ),
+                        SizedBox(height: 10,),
+                        Text("Ara",style: TextStyle(color:Colors.white),),
+                      ],
                     ),
                     const SizedBox(width: 14),
-                    const CircleAvatar(
-                      radius: 30,
-                      backgroundImage: AssetImage("assets/images/btc.png"),
+                    Column(
+                      children: [
+                        const CircleAvatar(
+                          radius: 30,
+                          backgroundImage: AssetImage("assets/images/btc.png"),
+                        ),
+                        
+                        SizedBox(height: 10,),
+                        Text("BTC",style: TextStyle(color:Colors.white),),
+                      ],
                     ),
                     const SizedBox(width: 14),
-                    const CircleAvatar(
-                      radius: 30,
-                      backgroundImage: AssetImage("assets/images/eth.png"),
+                    Column(
+                      children: [
+                        const CircleAvatar(
+                          radius: 30,
+                          backgroundImage: AssetImage("assets/images/eth.png"),
+                        ),
+                        SizedBox(height: 10,),
+                        Text("ETH",style: TextStyle(color:Colors.white),),
+                      ],
                     ),
                     const SizedBox(width: 14),
-                    const CircleAvatar(
-                      radius: 30,
-                      backgroundImage: AssetImage("assets/images/bnb.png"),
+                    Column(
+                      children: [
+                        const CircleAvatar(
+                          radius: 30,
+                          backgroundImage: AssetImage("assets/images/bnb.png"),
+                        ),
+                        SizedBox(height: 10,),
+                        Text("BNB",style: TextStyle(color:Colors.white),),
+                      ],
                     ),
                     const SizedBox(width: 14),
-                    const CircleAvatar(
-                      radius: 30,
-                      backgroundImage: AssetImage("assets/images/daha.png"),
-                      child: Text("+43"),
+                    Column(
+                      children: [
+                          InkWell(
+                            onTap: () {
+                              showDialog(
+  context: context,
+  builder: (BuildContext context) {
+    return AlertDialog(
+      title: new Text("Premium Üye Olunuz"),
+      content: new Text("Daha fazla Coin takip etmek ve avantajlardan yararlanmak için Premium üyeliğe geçiniz"),
+      actions: <Widget>[
+        new TextButton(
+          child: new Text("Dön"),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
+      ],
+    );
+  },
+);
+                            },
+                           child: CircleAvatar(
+                            radius: 30,
+                            backgroundImage: AssetImage("assets/images/daha.png"),
+                            child:Text("+43"),
+                                                 ),
+                         ),
+                        SizedBox(height: 10,),
+                        Text("Dahası",style: TextStyle(color:Colors.white),),
+
+                      ],
                     ),
                   ],
                 ),
                 const SizedBox(
-                  height: 15,
+                  height: 30,
                 ),
                 //Haberler
                 Row(
@@ -257,15 +314,47 @@ class _HomePageState extends State<HomePage> {
                         "5 Saat",
                         style: TextStyle(color: Colors.white, fontSize: 14),
                       ),
-                    )
+                    ),
                   ]),
                 ),
-                
+                 Row(children: [
+                    const CircleAvatar(
+                      radius: 25,
+                      backgroundImage: AssetImage("assets/images/tmb.png"),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 50, top: 10),
+                      child: SizedBox(
+                        width: 170,
+                        child: Column(
+                          children: [
+                            const Text(
+                              "Merkez Bankası Toplantı Tarihi Belli Oldu",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 14),
+                            ),
+                            Text(
+                              "Dün 13:45",
+                              style: TextStyle(color: Colors.grey.shade600),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 50),
+                      child: Text(
+                        "Dün",
+                        style: TextStyle(color: Colors.white, fontSize: 14),
+                      ),
+                    ),
+                  ]),
+
               ]),
             ),
           ),
-        ),
-      ),
-    );
+          ),
+          ),
+          );
   }
 }
