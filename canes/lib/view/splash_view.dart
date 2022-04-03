@@ -10,7 +10,7 @@ class _splash_screenState extends State<splash_screen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 1, 12, 21),
+      backgroundColor: const Color.fromARGB(255, 1, 12, 21),
       body: SafeArea(
         child: Container(
           padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
@@ -18,18 +18,19 @@ class _splash_screenState extends State<splash_screen> {
           child: Column(
             children: [
               //Fotoğraf
-            Container(
-              child: Image(image: AssetImage("assets/images/Logo.png")),
-            ),
-              SizedBox(
-                height: 90,
+              Container(
+                child: const Image(
+                    image: AssetImage("assets/images/logo sonetrafısiyah.png")),
+              ),
+              const SizedBox(
+                height: 50,
               ),
               //Yazı
               Padding(
                 padding: const EdgeInsets.only(right: 120),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+                  children: const [
                     Text(
                       "Crypto Dinar",
                       style: TextStyle(color: Colors.green, fontSize: 15),
@@ -39,7 +40,10 @@ class _splash_screenState extends State<splash_screen> {
                     ),
                     Text(
                       "Kripto",
-                      style: TextStyle(color: Colors.white, fontSize: 30,fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold),
                     ),
                     SizedBox(
                       height: 7,
@@ -57,10 +61,9 @@ class _splash_screenState extends State<splash_screen> {
                     Text(
                       "Gözünüz.",
                       style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold
-                      ),
+                          color: Colors.white,
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
@@ -91,7 +94,7 @@ class _splash_screenState extends State<splash_screen> {
                       style: ElevatedButton.styleFrom(
                           elevation: 20,
                           primary: const Color(0xFF0A5D75),
-                          minimumSize:  Size(140, 50),
+                          minimumSize: const Size(140, 50),
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20)))),
                 ),

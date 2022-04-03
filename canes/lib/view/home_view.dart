@@ -93,7 +93,7 @@ class _HomePageState extends State<HomePage> {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
                             image: const DecorationImage(
-                                image: AssetImage("assets/images/grafik.jpg"),
+                                image: AssetImage("assets/images/foto1.jpg"),
                                 fit: BoxFit.fill)),
                       ),
                       const SizedBox(
@@ -104,7 +104,7 @@ class _HomePageState extends State<HomePage> {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
                             image: const DecorationImage(
-                                image: AssetImage("assets/images/grafik.jpg"),
+                                image: AssetImage("assets/images/foto2.jpg"),
                                 fit: BoxFit.fill)),
                       ),
                     ],

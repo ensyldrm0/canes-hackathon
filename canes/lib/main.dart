@@ -21,7 +21,7 @@ class MyMain extends StatelessWidget {
       "/home": (context) =>HomePage(),
       "/Bottom":(context) => BottomNavigation(),
       },
-      home:ProfilePage(),
+      home:splash_screen(),
       debugShowCheckedModeBanner: false,
     );
   }

@@ -243,41 +243,8 @@ class _DetailPageState extends State<DetailPage> {
                         style: TextStyle(fontSize: 13),
                       ),
                       SizedBox(height: 30,),
-                Container(
-                  width: 350,
-                  height: 70,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: Colors.grey.shade500),
-                  child: Column(
-                    children: [
-                      Row(
-                        children: const [
-                          Padding(
-                            padding: EdgeInsets.only(left: 10),
-                            child: Text(
-                              "@aybikepeker",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      const Text(
-                        "Dostlar boğa döneminde alım yapmak mantıklı mıdır?",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 13),
-                      )
-                    ],
-                  ),
-                )
-                            ]),
-                          ),
-              ]),
-                  ),
-          ),),),);
+                
+                    ]),),]),),),),),);
     
   }
 }
